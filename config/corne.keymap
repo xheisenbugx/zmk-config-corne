@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -50,10 +49,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&lt 3 TAB      &kp Q           &kp W          &kp E          &kp R            &kp T        &kp Y        &kp U            &kp I          &kp O          &kp P              &kp BSPC
-&mt LCTRL ESC  &hmr_l LCTRL A  &hmr_l LALT S  &hmr_l LGUI D  &hmr_l LSHIFT F  &kp G        &kp H        &hmr_r RSHIFT J  &hmr_r RGUI K  &hmr_r RALT L  &hmr_r RCTRL SEMI  &kp SQT
-&kp LSHFT      &kp Z           &kp X          &kp C          &kp V            &kp B        &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH           &mt LEFT_SHIFT KP_ENTER
-                                              &mo 3          &lt 1 BACKSPACE  &lt 2 TAB    &lt 2 ENTER  &lt 1 SPACE      &mo 3
+&none  &kp Q           &kp W          &kp E          &kp R            &kp T        &kp Y        &kp U            &kp I          &kp O          &kp P                      &none
+&none  &hmr_l LCTRL A  &hmr_l LALT S  &hmr_l LGUI D  &hmr_l LSHIFT F  &kp G        &kp H        &hmr_r RSHIFT J  &hmr_r RGUI K  &hmr_r RALT L  &hmr_r RCTRL SINGLE_QUOTE  &none
+&none  &kp Z           &kp X          &kp C          &kp V            &kp B        &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH                   &none
+                                      &none          &lt 1 BACKSPACE  &lt 2 TAB    &lt 2 ENTER  &lt 1 SPACE      &none
             >;
         };
 
@@ -65,10 +64,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp EXCL   &kp AT        &kp HASH   &kp DLLR       &kp PRCNT    &kp CARET  &kp LEFT_PARENTHESIS  &kp ASTRK       &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp BSPC
-&kp LCTRL  &kp MINUS  &kp PLUS      &kp EQUAL  &kp AMPERSAND  &trans       &kp MINUS  &kp LEFT_BRACKET      &kp UP_ARROW    &kp RIGHT_BRACKET      &kp BSLH   &trans
-&kp LSHFT  &kp SLASH  &kp ASTERISK  &kp CARET  &kp PIPE       &trans       &kp TILDE  &kp LEFT_ARROW        &kp DOWN_ARROW  &kp RIGHT_ARROW        &kp PIPE   &trans
-                                    &trans     &trans         &trans       &trans     &trans                &trans
+&none  &kp EXCL           &kp AT              &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS            &kp PIPE     &kp PLUS   &kp N7                &kp N8          &kp N9          &kp STAR   &none
+&none  &hmr_l LCTRL HASH  &hmr_l LALT DOLLAR  &hmr_l LGUI LEFT_BRACKET  &hmr_l LEFT_SHIFT RIGHT_BRACKET  &kp AMPS     &kp EQUAL  &hmr_r LEFT_SHIFT N4  &hmr_r RGUI N5  &hmr_r RALT N6  &kp SEMI   &none
+&none  &kp PERCENT        &kp CARET           &kp LEFT_BRACE            &kp RIGHT_BRACE                  &kp TILDE    &kp MINUS  &kp N1                &kp NUMBER_2    &kp N3          &kp SLASH  &none
+                                              &none                     &kp BACKSLASH                    &kp GRAVE    &kp DOT    &kp N0                &none
             >;
         };
 
@@ -80,19 +79,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
-            >;
-        };
-
-        numbers {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7        &kp N8        &kp N9        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp N3        &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans        &kp N0
+&none  &none                &none               &none                     &none                 &none     &none     &none          &none        &none      &none  &none
+&none  &hmr_l LCTRL ESCAPE  &hmr_l LALT K_PREV  &hmr_l LGUI K_PLAY_PAUSE  &hmr_l LSHIFT K_NEXT  &none     &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &none  &none
+&none  &none                &none               &none                     &none                 &none     &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none  &none
+                                                &none                     &trans                &trans    &trans    &trans         &none
             >;
         };
     };
