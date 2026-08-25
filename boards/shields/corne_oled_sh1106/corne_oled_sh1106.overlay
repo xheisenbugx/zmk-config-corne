@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2026 Osvaldo Cordova Aburto
+ * SPDX-License-Identifier: MIT
+ *
+ * The upstream Corne shield defines a 128x32 SSD1306 display as &oled.
+ * SH1106 controllers use the same four-wire I2C connection and address, but
+ * need their own driver compatible and a two-column offset into 132-pixel RAM.
+ */
+
+&oled {
+    compatible = "sinowealth,sh1106";
+    segment-offset = <2>;
+};

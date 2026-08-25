@@ -20,7 +20,15 @@
 include:
   - board: nice_nano//zmk
     shield: corne_left
+    artifact-name: corne_left_ssd1306
   - board: nice_nano//zmk
     shield: corne_right
+    artifact-name: corne_right_ssd1306
+  - board: nice_nano//zmk
+    shield: corne_left corne_oled_sh1106
+    artifact-name: corne_left_sh1106
+  - board: nice_nano//zmk
+    shield: corne_right corne_oled_sh1106
+    artifact-name: corne_right_sh1106
   - board: nice_nano//zmk
     shield: settings_reset
