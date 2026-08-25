@@ -38,3 +38,39 @@ The display feature is enabled in `config/corne.conf`. The normal Corne builds
 use upstream ZMK's SSD1306 definition. The additional
 `corne_oled_sh1106` shield changes only the controller driver and its column
 offset; it keeps the same I2C pins, address, and 128x32 resolution.
+
+## Split and Bluetooth recovery
+
+The left half is the ZMK central. Only the left half connects to a computer as
+a USB or Bluetooth keyboard. The right half is a split peripheral: USB can
+power and flash it, but it sends key presses to the left half over Bluetooth
+and cannot type into a computer by itself.
+
+If the right half does not reconnect after flashing, reset the stored split
+pairing on **both** controllers:
+
+1. Flash `settings_reset.uf2` to the left half.
+2. Flash `settings_reset.uf2` to the right half.
+3. Flash the desired `corne_left_*.uf2` back to the left half.
+4. Flash the matching `corne_right_*.uf2` back to the right half.
+5. Reset or power-cycle both halves at approximately the same time.
+6. Forget the old keyboard in the computer's Bluetooth settings and pair it
+   again.
+
+Regular firmware flashing does not erase ZMK's stored Bluetooth bonds, which
+is why resetting both halves is important. The reset firmware intentionally
+does not behave as a keyboard; always replace it with normal firmware.
+
+The lower layer now provides Bluetooth recovery and output controls on the top
+row. Hold the lower-layer thumb key and use:
+
+| Key | Action |
+| --- | --- |
+| `Q` | Clear the selected Bluetooth profile |
+| `W` through `T`, then `Y` | Select Bluetooth profiles 1 through 5 |
+| `U` | Prefer Bluetooth output |
+| `I` | Prefer USB output |
+| `O` | Toggle the preferred output |
+
+The firmware also uses +8 dBm BLE transmit power to improve the connection
+between the halves and between the keyboard and host.

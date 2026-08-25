@@ -32,3 +32,4 @@ include:
     artifact-name: corne_right_sh1106
   - board: nice_nano//zmk
     shield: settings_reset
+    artifact-name: settings_reset
